@@ -3,6 +3,14 @@
  background-color: red;
  text-align: center;
  color: white;
- padding: 30px 40px
+ padding: 30px 40px;
+
+
+}
+
+
+li {
+   
+   margin-bottom: 5px;
 
 }
