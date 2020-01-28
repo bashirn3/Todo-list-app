@@ -1,10 +1,12 @@
-var button = document.querySelector("button");
+var button = document.getElementById("add");
 var list = document.querySelector("ul");
 var input = document.querySelector("input");
-var clr = document.getElementById("clear")
+var clr = document.getElementById("clear");
+var doneList = document.getElementById("done");
 
 clear.addEventListener("click" , function() {
-   document.querySelector('ul').innerHTML="";
+   document.getElementById("new").innerHTML="";
+   document.getElementById("done").innerHTML="";
 })
 
 
@@ -20,12 +22,16 @@ else {
 
 var newItem = document.createElement('li');
 var del = document.createElement("button");
-del.innerHTML ="Delete";
+var done = document.createElement("button");
+done.innerHTML = "Done";
+del.innerHTML = "Delete";
 
 
 
-newItem.innerHTML= todo + " ";
+
+newItem.innerHTML = todo + " ";
 newItem.appendChild(del);
+newItem.appendChild(done);
 list.appendChild(newItem);
 
 }
@@ -37,5 +43,16 @@ del.addEventListener("click" , function(){
 
   })   
 
+
+done.addEventListener("click", function(){
+   
+    var doneItem = document.createElement("li");
+    doneItem.innerHTML = todo + " ";
+    doneItem.style.setProperty("text-decoration", "line-through");
+    list.removeChild(newItem);
+    doneList.appendChild(doneItem);
+
+
+  })
 
 })
